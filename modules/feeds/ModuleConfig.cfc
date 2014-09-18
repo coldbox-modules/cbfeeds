@@ -5,7 +5,7 @@ component {
 	this.author 			= "Luis Majano";
 	this.webURL 			= "http://www.ortussolutions.com";
 	this.description 		= "A module that can consume and generate fancy RSS/ATOM feeds";
-	this.version			= "1.0.0";
+	this.version			= "1.0.0.@build.number@";
 	// If true, looks for views in the parent first, if not found, then in the module. Else vice-versa
 	this.viewParentLookup 	= true;
 	// If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
@@ -28,15 +28,6 @@ component {
 			// the http timeout for the cfhttp operations in seconds
 			httpTimeout = 30
 		};
-
-
-		// Binder Mappings
-		binder.map( "FeedReader@feeds" )
-			.to( "#moduleMapping#.model.FeedReader" );
-
-		binder.map( "FeedGenerator@feeds" )
-			.to( "#moduleMapping#.model.FeedGenerator" );
-
 	}
 
 	/**

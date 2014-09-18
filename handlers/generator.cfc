@@ -589,8 +589,8 @@ This is a ColdBox event handler for our RSS generator.
 			var rc = controller.getRequestService().getContext().getCollection();
 			var returnCode = "";
 			var handler = fileRead('#getSetting("ApplicationPath")#handlers/generator.cfc');
-			var modelitem = fileRead('#getSetting("ApplicationPath")#model/feeditems.cfc');
-			var modelmeta = fileRead('#getSetting("ApplicationPath")#model/feedmeta.cfc');
+			var modelitem = fileRead('#getSetting("ApplicationPath")#models/feeditems.cfc');
+			var modelmeta = fileRead('#getSetting("ApplicationPath")#models/feedmeta.cfc');
 			handler = processCode(handler);
 			handler = ReplaceNoCase(handler, '&lt;!--- createFeed#rc.COMname# start --->', '&lt;!--- createFeed#rc.COMname# Event --->', 'all');
 			modelitem = processCode(modelitem);
@@ -664,7 +664,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfargument name="Event" type="any">
 		<cfset var rc = Event.getCollection()/>
 		<!--- Display the feed --->
-		<cfset Event.setView("generator/vwDisplayFeed")/>
+		<cfset Event.setView(view="generator/vwDisplayFeed",nolayout=true)/>
 	</cffunction>
 
 	<cffunction name="viewMissingFeed" access="private" returntype="void" output="false">
