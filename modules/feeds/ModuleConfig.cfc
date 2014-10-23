@@ -26,6 +26,8 @@ component {
 	* Fired when the module is registered and activated.
 	*/
 	function onLoad(){
+		// load parent settings
+		parseParentSettings();
 	}
 
 	/**

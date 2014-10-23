@@ -35,15 +35,13 @@ Quick and Dirty Feed Dump:
 			 output="false"
 			 singleton>
 
-	<!--- DI --->
-	<cfproperty name="cachebox" inject="cachebox">
-
 <!---------------------------------------- CONSTRUCTOR --------------------------------------------------->
 
 	<cffunction name="init" access="public" returntype="FeedReader" output="false" hint="Constructor">
-		<cfargument name="settings" type="struct" required="true" inject="coldbox:settings:feeds">
+		<cfargument name="settings" type="struct" required="true" inject="coldbox:setting:feeds">
 		<cfargument name="cachebox" required="true" inject="cachebox">
 		<cfscript>
+
 			// setup operational properties
 			setCacheType( arguments.settings.cacheType );
 			setUseCache( arguments.settings.useCache );

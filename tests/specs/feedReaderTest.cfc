@@ -19,20 +19,20 @@ Description :
 		</cfscript>
 	</cffunction>
 
-	<cffunction name="testPlugin" access="public" returntype="void" output="false">
+	<cffunction name="testModel" access="public" returntype="void" output="false">
 		<!--- Now test some events --->
 		<cfscript>
-			var plugin = getWireBox().getInstance( "FeedReader@feeds" );
+			var oFeeds = getWireBox().getInstance( "FeedReader@feeds" );
 
-			AssertTrue( isObject(plugin) );
+			AssertTrue( isObject(oFeeds) );
 		</cfscript>
 	</cffunction>
 
 	<cffunction name="testReadFeed" access="public" returntype="void" output="false">
 		<!--- Now test some events --->
 		<cfscript>
-			var plugin = getWireBox().getInstance( "FeedReader@feeds" );
-			var tStruct = plugin.readFeed(variables.feedlink);
+			var oFeeds = getWireBox().getInstance( "FeedReader@feeds" );
+			var tStruct = oFeeds.readFeed(variables.feedlink);
 
 			assertTrue(isStruct(tStruct), "Returned value is not valid struct");
 		</cfscript>
@@ -41,16 +41,16 @@ Description :
 	<cffunction name="testRetrieveFeed" access="public" returntype="void" output="false">
 		<!--- Now test some events --->
 		<cfscript>
-			var plugin = getWireBox().getInstance( "FeedReader@feeds" );
-			var tStruct = plugin.retrieveFeed(variables.feedlink);
+			var oFeeds = getWireBox().getInstance( "FeedReader@feeds" );
+			var tStruct = oFeeds.retrieveFeed(variables.feedlink);
 
 			assertTrue(isStruct(tStruct), "Returned value is not valid struct");
 
-			plugin.setCachedFeed(variables.feedlink, tStruct);
+			oFeeds.setCachedFeed(variables.feedlink, tStruct);
 
-			assertTrue(isStruct(plugin.getCachedFeed(variables.feedlink)), "Returned value is not valid struct");
+			assertTrue(isStruct(oFeeds.getCachedFeed(variables.feedlink)), "Returned value is not valid struct");
 
-			plugin.removeCachedFeed(variables.feedlink);
+			oFeeds.removeCachedFeed(variables.feedlink);
 
 		</cfscript>
 	</cffunction>
