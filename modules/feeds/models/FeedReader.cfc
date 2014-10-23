@@ -36,12 +36,13 @@ Quick and Dirty Feed Dump:
 			 singleton>
 
 	<!--- DI --->
-	<cfproperty name="cache" inject="cachebox:default">
+	<cfproperty name="cachebox" inject="cachebox">
 
 <!---------------------------------------- CONSTRUCTOR --------------------------------------------------->
 
 	<cffunction name="init" access="public" returntype="FeedReader" output="false" hint="Constructor">
-		<cfargument name="settings" type="struct" required="true" inject="coldbox:moduleSettings:feeds">
+		<cfargument name="settings" type="struct" required="true" inject="coldbox:settings:feeds">
+		<cfargument name="cachebox" required="true" inject="cachebox">
 		<cfscript>
 			// setup operational properties
 			setCacheType( arguments.settings.cacheType );
@@ -64,8 +65,10 @@ Quick and Dirty Feed Dump:
 					setCacheLocation( arguments.settings.cacheLocation );
 				}//end if cahce eq file
 				else{
-					/* RAM cache */
+					// The cache Prefix
 					setCachePrefix( 'rssreader-' );
+					// Get the rigth cache provider
+					variables.cache = arguments.cachebox.getCache( arguments.settings.cacheProvider );
 				}
 
 			}//end else using cache

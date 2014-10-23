@@ -1,7 +1,7 @@
 {
 	"name" 		: "Feeds",
 	"author" 	: "Luis Majano <lmajano@ortussolutions.com",
-	"version"	: "1.0.0.@build.number@",
+	"version"	: "1.0.0+@build.number@",
 	"slug"		: "feeds",
 	"type"		: "modules",
 	"homepage"	: "http://www.coldbox.org",
@@ -18,4 +18,5 @@
 		{ "type" : "railo", "version" : ">4.1" },
 		{ "type" : "adobe", "version" : ">9.02" }
 	],
+	"ignore" : [ "apidocs/*", "readme.md", "instructions.md", "changelog.md" ]
 }
