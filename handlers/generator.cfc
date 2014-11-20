@@ -43,7 +43,7 @@ This is a ColdBox event handler for our RSS generator.
 		FeedStruct is the name of the structure containing your feed data.
 		outputFile is the name and path of the XML file the plug-in will create, any existing file will automatically be overwritten.
 		 --->
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed using the vwPostGenerate view located at /views/generator/vwPostGenerate.cfm --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>
@@ -56,7 +56,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.pathtofile = "#getSetting("ApplicationPath")#includes/xml/RSS_Sample_FeedError.xml"/>
 		<cfset rc.feed = instance.feedmeta.error()/>
 		<cfset rc.feed.items = instance.feeditems.error()/>
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>
@@ -69,7 +69,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.pathtofile = "#getSetting("ApplicationPath")#includes/xml/RSS_Sample_Playground.xml"/>
 		<cfset rc.feed = instance.feedmeta.playground()/>
 		<cfset rc.feed.items = instance.feeditems.playground()/>
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>
@@ -93,7 +93,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.map.pubDate = "orderdate"/>
 		<!--- Check query record count to make sure the database retrieval was okay --->
 		<cfif rc.feed.items.RecordCount gte 1>
-			<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,ColumnMap=rc.map,OutputFile=rc.pathtofile)/>
+			<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,ColumnMap=rc.map,OutputFile=rc.pathtofile)/>
 		<cfelse>
 			<cfset rc.compileFeed = false/>
 		</cfif>
@@ -115,7 +115,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.map.pubDate = "orderdate"/>
 		<!--- Check query record count to make sure the database retrieval was okay --->
 		<cfif rc.feed.items.RecordCount gte 1>
-			<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,ColumnMap=rc.map,OutputFile=rc.pathtofile)/>
+			<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,ColumnMap=rc.map,OutputFile=rc.pathtofile)/>
 		<cfelse>
 			<cfset rc.compileFeed = false/>
 		</cfif>
@@ -131,7 +131,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.pathtofile = "#getSetting("ApplicationPath")#includes/xml/RSS_Sample_iTunes.xml"/>
 		<cfset rc.feed = instance.feedmeta.itunes()/>
 		<cfset rc.feed.items = instance.feeditems.itunes()/>
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>
@@ -144,7 +144,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.pathtofile = "#getSetting("ApplicationPath")#includes/xml/RSS_Sample_OpenSearch.xml"/>
 		<cfset rc.feed = instance.feedmeta.opensearch()/>
 		<cfset rc.feed.items = instance.feeditems.opensearch()/>
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>
@@ -157,7 +157,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.pathtofile = "#getSetting("ApplicationPath")#includes/xml/RSS_Sample_DublinCore.xml"/>
 		<cfset rc.feed = instance.feedmeta.dublincore()/>
 		<cfset rc.feed.items = instance.feeditems.dublincore()/>
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>
@@ -170,7 +170,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.pathtofile = "#getSetting("ApplicationPath")#includes/xml/RSS_Sample_Slash.xml"/>
 		<cfset rc.feed = instance.feedmeta.slash()/>
 		<cfset rc.feed.items = instance.feeditems.slash()/>
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>
@@ -183,7 +183,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.pathtofile = "#getSetting("ApplicationPath")#includes/xml/RSS_Sample_ComboEx.xml"/>
 		<cfset rc.feed = instance.feedmeta.comboex()/>
 		<cfset rc.feed.items = instance.feeditems.comboex()/>
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>
@@ -196,7 +196,7 @@ This is a ColdBox event handler for our RSS generator.
 		<cfset rc.pathtofile = "#getSetting("ApplicationPath")#includes/xml/RSS_Sample_International.xml"/>
 		<cfset rc.feed = instance.feedmeta.international()/>
 		<cfset rc.feed.items = instance.feeditems.international()/>
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>
@@ -217,7 +217,7 @@ This is a ColdBox event handler for our RSS generator.
 			<cfset temp = getplugin('applicationstorage').setVar('feedETag','"coldbox/example"')/>
 		</cfif>
 		<cfset rc.feed["lastBuildDate"] = rc.feedTimeStamp/>
-		<cfset rc.compileFeed = getModel( "feedGenerator@feeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
+		<cfset rc.compileFeed = getModel( "feedGenerator@cbfeeds" ).createFeed(FeedStruct=rc.feed,OutputFile=rc.pathtofile)/>
 		<!--- Display the feed --->
 		<cfset Event.setView("generator/vwPostGenerate")/>
 	</cffunction>

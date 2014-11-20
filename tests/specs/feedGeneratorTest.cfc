@@ -41,7 +41,7 @@ Description :
 	<cffunction name="testPlugin" access="public" returntype="void" output="false">
 		<!--- Now test some events --->
 		<cfscript>
-			var plugin = getWireBox().getInstance( "FeedGenerator@feeds" );
+			var plugin = getWireBox().getInstance( "feedGenerator@cbfeeds" );
 
 			AssertTrue( isObject(plugin) );
 		</cfscript>
@@ -50,7 +50,7 @@ Description :
 	<cffunction name="testCreateFeed" access="public" returntype="void" output="false">
 		<!--- Now test some events --->
 		<cfscript>
-			var plugin = getWireBox().getInstance( "FeedGenerator@feeds" );
+			var plugin = getWireBox().getInstance( "feedGenerator@cbfeeds" );
 			var direactoryPath = ExpandPath('/tests/tmp/') & 'testrss.xml';
 			var xmlDoc = plugin.createFeed(feedStruct = variables.feedStruct, OutputFile = direactoryPath);
 

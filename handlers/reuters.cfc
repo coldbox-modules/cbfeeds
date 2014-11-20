@@ -24,7 +24,7 @@ Description :
 		<cfset var rc = event.getCollection()>
 		<!--- Obtain Reuters Top News feed --->
 		<cfset rc.getReutersURL = '#getSetting("ReutersURL")#?format=xml'/>
-		<cfset rc.rdata = getModel( "FeedReader@feeds" ).readFeed(Feedurl=rc.getReutersURL,itemsType="query")>
+		<cfset rc.rdata = getModel( "FeedReader@cbfeeds" ).readFeed(Feedurl=rc.getReutersURL,itemsType="query")>
 		<!--- Organise data --->
 		<cfset Event.setView("reuters/results")>
 	</cffunction>

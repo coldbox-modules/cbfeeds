@@ -1,13 +1,13 @@
-INSTRUCTIONS
-============
-Just drop into your modules folder or use the box-cli to install
+#INSTRUCTIONS
 
-`box install feeds`
+Just drop into your **modules** folder or use the box-cli to install
+
+`box install cbfeeds`
 
 The module registers the following mappings in WireBox:
 
-* feedReader@feeds
-* feedGenerator@feeds
+* `FeedReader@cbfeeds` - Reads feeds with caching enhancements
+* `feedGenerator@cbfeeds` - Generate all kinds of feeds
 
 Then you can use each of the model objects to read or generate feeds to your heart's content.
 

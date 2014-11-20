@@ -38,7 +38,7 @@ Description	:
 		
 		<!--- Obtain Google Data API version 2 feed --->
 		<cfset rc.getFlickrURL = '#getSetting("FlickrURL")#?tags=#rc.tag_list#&tagmode=#rc.tag_mode#&format=atom'/>
-		<cfset rc.flickrdata = getModel( "FeedReader@feeds" ).readFeed(Feedurl=rc.getFlickrURL)>
+		<cfset rc.flickrdata = getModel( "FeedReader@cbfeeds" ).readFeed(Feedurl=rc.getFlickrURL)>
 		<!--- Organise data --->
 		<cfset Event.setView("flickr/results")>
 	</cffunction>

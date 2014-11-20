@@ -1,5 +1,5 @@
-WELCOME TO THE FEEDS MODULE
-==============================
+#WELCOME TO THE CBFEEDS MODULE
+
 A nice and fancy way to consume and produce RSS, ATOM feeds the ColdBox way!
 
 ##DOCUMENTATION

@@ -22,7 +22,7 @@ Description :
 	<cffunction name="testModel" access="public" returntype="void" output="false">
 		<!--- Now test some events --->
 		<cfscript>
-			var oFeeds = getWireBox().getInstance( "FeedReader@feeds" );
+			var oFeeds = getWireBox().getInstance( "FeedReader@cbfeeds" );
 
 			AssertTrue( isObject(oFeeds) );
 		</cfscript>
@@ -31,7 +31,7 @@ Description :
 	<cffunction name="testReadFeed" access="public" returntype="void" output="false">
 		<!--- Now test some events --->
 		<cfscript>
-			var oFeeds = getWireBox().getInstance( "FeedReader@feeds" );
+			var oFeeds = getWireBox().getInstance( "FeedReader@cbfeeds" );
 			var tStruct = oFeeds.readFeed(variables.feedlink);
 
 			assertTrue(isStruct(tStruct), "Returned value is not valid struct");
@@ -41,7 +41,7 @@ Description :
 	<cffunction name="testRetrieveFeed" access="public" returntype="void" output="false">
 		<!--- Now test some events --->
 		<cfscript>
-			var oFeeds = getWireBox().getInstance( "FeedReader@feeds" );
+			var oFeeds = getWireBox().getInstance( "FeedReader@cbfeeds" );
 			var tStruct = oFeeds.retrieveFeed(variables.feedlink);
 
 			assertTrue(isStruct(tStruct), "Returned value is not valid struct");

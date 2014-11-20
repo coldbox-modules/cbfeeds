@@ -1,14 +1,14 @@
 <cfparam name="url.version" default="0">
-<cfparam name="url.path" 	default="#expandPath( "./JavaLoader-APIDocs" )#">
+<cfparam name="url.path" 	default="#expandPath( "./CBFeeds-APIDocs" )#">
 <cfscript>
-	docName = "Feeds-APIDocs";
-	base = expandPath( "/feeds" );
+	docName = "cbFeeds-APIDocs";
+	base = expandPath( "/cbfeeds" );
 
 	colddoc 	= new ColdDoc();
-	strategy 	= new colddoc.strategy.api.HTMLAPIStrategy( url.path, "Feeds v#url.version#" );
+	strategy 	= new colddoc.strategy.api.HTMLAPIStrategy( url.path, "CBFeeds v#url.version#" );
 	colddoc.setStrategy( strategy );
 
-	colddoc.generate( inputSource=base, outputDir=url.path, inputMapping="feeds" );
+	colddoc.generate( inputSource=base, outputDir=url.path, inputMapping="cbfeeds" );
 </cfscript>
 
 <!---

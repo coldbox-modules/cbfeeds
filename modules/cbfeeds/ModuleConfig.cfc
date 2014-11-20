@@ -7,7 +7,7 @@
 component {
 
 	// Module Properties
-	this.title 				= "feeds";
+	this.title 				= "cbfeeds";
 	this.author 			= "Luis Majano";
 	this.webURL 			= "http://www.ortussolutions.com";
 	this.description 		= "A module that can consume and generate fancy RSS/ATOM feeds";
@@ -17,7 +17,9 @@ component {
 	// If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
 	this.layoutParentLookup = true;
 	// Module Entry Point
-	this.entryPoint			= "feeds";
+	this.entryPoint			= "cbfeeds";
+	// CF Mapping
+	this.cfMapping			= "cbfeeds";
 
 	function configure(){
 	}
