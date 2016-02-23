@@ -1,11 +1,11 @@
 {
 	"name" 		: "CBFeeds",
 	"author" 	: "Luis Majano <lmajano@ortussolutions.com",
-	"version"	: "1.0.1",
+	"version"	: "@version.number@+@build.number@",
 	"slug"		: "cbfeeds",
 	"type"		: "modules",
-	"homepage"	: "http://www.coldbox.org",
-	"documentation"		: "http://wiki.coldbox.org",
+	"homepage"	: "https://github.com/ColdBox/cbox-feeds/",
+	"documentation"		: "https://github.com/ColdBox/cbox-feeds/wiki",
 	"repository"		: { "type" : "git", "url" : "https://github.com/ColdBox/cbox-feeds" },
 	"shortDescription"	: "A nice way to consume and produce RSS,ATOM feeds the ColdBox way!",
 	"license"			: [ 
@@ -15,7 +15,7 @@
 		"Brad Wood <bdw429s@gmail.com>", "Curt Gratz <gratz@computerknowhow.com>"
 	],
 	"engines"	: [
-		{ "type" : "railo", "version" : ">4.1" },
+		{ "type" : "lucee", "version" : ">4.5" },
 		{ "type" : "adobe", "version" : ">9.02" }
 	],
 	"ignore" : [ ]

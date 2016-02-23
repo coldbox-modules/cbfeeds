@@ -1,11 +1,11 @@
+[![Build Status](https://travis-ci.org/ColdBox/cbox-feeds.svg?branch=development)](https://travis-ci.org/ColdBox/cbox-feeds)
+
 #WELCOME TO THE CBFEEDS MODULE
 
 A nice and fancy way to consume and produce RSS, ATOM feeds the ColdBox way!
 
 ##DOCUMENTATION
-- http://wiki.coldbox.org/wiki/Plugins:FeedReader.cfm
-- http://wiki.coldbox.org/wiki/Plugins:FeedGenerator.cfm
-- http://wiki.coldbox.org/wiki/Plugins:FeedGeneratorElements.cfm
+https://github.com/ColdBox/cbox-feeds/wiki
 
 ##LICENSE
 Apache License, Version 2.0.
@@ -15,12 +15,54 @@ Apache License, Version 2.0.
 - http://www.coldbox.org/forgebox/feeds
 
 ##SYSTEM REQUIREMENTS
-- Railo 4+
+- Lucee 4.5+
 - ColdFusion 9+
+- 
+#INSTRUCTIONS
+
+Just drop into your **modules** folder or use the box-cli to install
+
+`box install cbfeeds`
+
+The module registers the following mappings in WireBox:
+
+* `FeedReader@cbfeeds` - Reads feeds with caching enhancements
+* `feedGenerator@cbfeeds` - Generate all kinds of feeds
+
+Then you can use each of the model objects to read or generate feeds to your heart's content.
+
+##Settings
+The module can be configured via settings in your `ColdBox.cfc` in a structure called `feeds`:
+
+```js
+feeds = {
+    // leverage the cache for storage of feed reading, leverages the 'default' cache
+    useCache  = true,
+    // The cache provider to use for storing the cached elements
+    cacheProvider = "default",
+    // where to store the cache, options are: [ram, file]
+    cacheType = "ram",
+    // if using file cache, the location to store the cached files
+    cacheLocation = "",
+    // the cache timeout for the items in seconds
+    cacheTimeout = 30,
+    // the http timeout for the cfhttp operations in seconds
+    httpTimeout = 30
+};
+```
+
+##Samples + Documentation
+If you want examples just look at the shell sample app in the repository:
+https://github.com/ColdBox/cbox-feeds
+
+Or the online documentation for the module:
+
+* https://github.com/ColdBox/cbox-feeds/wiki
+
 
 ********************************************************************************
 Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
-www.coldbox.org | www.luismajano.com | www.ortussolutions.com
+ww.ortussolutions.com
 ********************************************************************************
 ####HONOR GOES TO GOD ABOVE ALL
 Because of His grace, this project exists. If you don't like this, then don't read it, its not for you.
