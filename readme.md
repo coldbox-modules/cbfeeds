@@ -1,23 +1,23 @@
-[![Build Status](https://travis-ci.org/ColdBox/cbox-feeds.svg?branch=development)](https://travis-ci.org/ColdBox/cbox-feeds)
+[![Build Status](https://travis-ci.org/coldbox-modules/cbox-feeds.svg?branch=development)](https://travis-ci.org/coldbox-modules/cbox-feeds)
 
 #WELCOME TO THE CBFEEDS MODULE
 
 A nice and fancy way to consume and produce RSS, ATOM feeds the ColdBox way!
 
 ##DOCUMENTATION
-https://github.com/ColdBox/cbox-feeds/wiki
+https://github.com/coldbox-modules/cbox-feeds/wiki
 
 ##LICENSE
 Apache License, Version 2.0.
 
 ##IMPORTANT LINKS
 - https://github.com/ColdBox/cbox-feeds
-- http://www.coldbox.org/forgebox/feeds
+- https://www.forgebox.io/view/cbfeeds
 
 ##SYSTEM REQUIREMENTS
 - Lucee 4.5+
-- ColdFusion 9+
-- 
+- ColdFusion 10+
+
 #INSTRUCTIONS
 
 Just drop into your **modules** folder or use the box-cli to install
@@ -53,11 +53,11 @@ feeds = {
 
 ##Samples + Documentation
 If you want examples just look at the shell sample app in the repository:
-https://github.com/ColdBox/cbox-feeds
+https://github.com/coldbox-modules/cbox-feeds
 
 Or the online documentation for the module:
 
-* https://github.com/ColdBox/cbox-feeds/wiki
+* https://github.com/coldbox-modules/cbox-feeds/wiki
 
 
 ********************************************************************************

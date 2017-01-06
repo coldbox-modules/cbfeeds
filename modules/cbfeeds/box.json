@@ -1,12 +1,13 @@
 {
 	"name" 		: "CBFeeds",
-	"author" 	: "Luis Majano <lmajano@ortussolutions.com",
-	"version"	: "@version.number@+@build.number@",
+	"version"   : "@build.version@+@build.number@",
+    "location"  : "http://downloads.ortussolutions.com/ortussolutions/coldbox-modules/cborm/@build.version@/cborm-@build.version@.zip",
+	"author" 	: "Ortus Solutions <info@ortussolutions.com",
 	"slug"		: "cbfeeds",
 	"type"		: "modules",
-	"homepage"	: "https://github.com/ColdBox/cbox-feeds/",
-	"documentation"		: "https://github.com/ColdBox/cbox-feeds/wiki",
-	"repository"		: { "type" : "git", "url" : "https://github.com/ColdBox/cbox-feeds" },
+	"homepage"	: "https://github.com/coldbox-modules/cbox-feeds/",
+	"documentation"		: "https://github.com/coldbox-modules/cbox-feeds/wiki",
+	"repository"		: { "type" : "git", "url" : "https://github.com/coldbox-modules/cbox-feeds" },
 	"shortDescription"	: "A nice way to consume and produce RSS,ATOM feeds the ColdBox way!",
 	"license"			: [ 
 		{ "type" : "Apache2", "url" : "http://www.apache.org/licenses/LICENSE-2.0.html" } 
@@ -14,9 +15,9 @@
 	"contributors"		: [
 		"Brad Wood <bdw429s@gmail.com>", "Curt Gratz <gratz@computerknowhow.com>"
 	],
-	"engines"	: [
-		{ "type" : "lucee", "version" : ">4.5" },
-		{ "type" : "adobe", "version" : ">9.02" }
-	],
-	"ignore" : [ ]
+	"ignore":[
+        "**/.*",
+        "tests",
+        "*/.md"
+    ]
 }
