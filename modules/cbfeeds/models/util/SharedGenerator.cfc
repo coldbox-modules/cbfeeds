@@ -157,27 +157,14 @@ License		: 	Apache 2 License
 			var tmpStr = "";
 			var i = 0;
 			/* If CDATA section is found do not convert string (http://en.wikipedia.org/wiki/CDATA) */
-			if( reFindNoCase( CDRegEx, fmtStr, 1, 'no' ) is 1 ){}
-			/* Otherwise replace all & < > characters with hexadecimal code form XML plain text compatibility */
-			else {
-				fmtStr = reReplaceNoCase( fmtStr, '(\&)([^##x:alnum:{2,4};].*?)', '&##x26;\2', 'all' ); 
-				fmtStr = replaceNoCase( fmtStr, '<', '&##x3C;', 'all' );
-				fmtStr = replaceNoCase( fmtStr, '>', '&##x3E;', 'all' );
-			}
-			/* Replace all high characters (numeric values 127 or greater) with hexadecimal code */
-			while( reFind( '[^\x00-\x7F]', fmtStr, i, false ) ){
-				 i 		= reFind( '[^\x00-\x7F]', fmtStr, i, false ); // find the location of a high character
-				 tmpStr = '&##x#FormatBaseN( Asc( Mid( fmtStr, i, 1 ) ), 16 )#;'; // obtain a copy of the high character and convert it to hexadecimal code
-				 fmtStr = insert( tmpStr, fmtStr, ( i ) ); // insert the hexadecimal code into the string
-				 fmtStr = removeChars( fmtStr, i, 1 ); // removed the old non-hexed character
-				 i = i + len( tmpStr ); // add the location to the loop count and then loop again from that character position
+			if(not reFindNoCase( CDRegEx, fmtStr, 1, 'no' ) is 1 ){
+				// Replace nasty &nbsp; references
+				fmtStr = replaceNoCase( fmtStr, "&nbsp;", "", "all" );
+
+				return ESAPIEncode('xml', fmtStr);
 			}
 			
-			// Replace nasty &nbsp; references
-			fmtStr = replaceNoCase( fmtStr, "&nbsp;", "", "all" );
-			
-			// return Unicoded string
-			return XMLFormat( fmtStr );
+			return ( fmtStr );
 		</cfscript>
 	</cffunction>
 
