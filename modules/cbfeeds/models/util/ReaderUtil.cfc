@@ -221,6 +221,8 @@ Description :
 			if(StructKeyExists(arguments.xmlRoot,"lastBuildDate"))
 				createdDate = arguments.xmlRoot.lastBuildDate.xmlText;
 			// atom 1
+			else if(StructKeyExists(arguments.xmlRoot,"published"))
+				createdDate = arguments.xmlRoot.published.xmlText;
 			else if(StructKeyExists(arguments.xmlRoot,"updated"))
 				createdDate = arguments.xmlRoot.updated.xmlText;
 			return createdDate;
@@ -302,10 +304,10 @@ Description :
 			else if(StructKeyExists(arguments.xmlRoot,"dc:date"))
 				updatedDate = arguments.xmlRoot["dc:date"].xmlText;
 			// atom 1
-			else if(StructKeyExists(arguments.xmlRoot,"published"))
-				updatedDate = arguments.xmlRoot.published.xmlText;
 			else if(StructKeyExists(arguments.xmlRoot,"updated"))
 				updatedDate = arguments.xmlRoot.updated.xmlText;
+			else if(StructKeyExists(arguments.xmlRoot,"published"))
+				updatedDate = arguments.xmlRoot.published.xmlText;
 			return updatedDate;
 		</cfscript>
 	</cffunction>
