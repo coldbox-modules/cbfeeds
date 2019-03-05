@@ -1,16 +1,26 @@
 {
-    "name":"CBValidation Builder",
-    "version":"1.0.0",
-    "slug":"cbvalidation-shell",
-    "private":false,
-    "dependencies":{
-        "coldbox":"^4.3.0"
-    },
-    "devDependencies":{
-        "testbox":"^2.4.0+80"
-    },
-    "installPaths":{
-        "coldbox":"coldbox",
-        "testbox":"testbox"
+	"name" 		: "CBFeeds",
+	"version"   : "1.2.0",
+    "location"  : "http://downloads.ortussolutions.com/ortussolutions/coldbox-modules/cbfeeds/@build.version@/cbfeeds-@build.version@.zip",
+	"author" 	: "Ortus Solutions <info@ortussolutions.com",
+	"slug"		: "cbfeeds",
+	"type"		: "modules",
+	"homepage"	: "https://github.com/coldbox-modules/cbfeeds/",
+	"documentation"		: "https://github.com/coldbox-modules/cbfeeds/wiki",
+	"repository"		: { "type" : "git", "url" : "https://github.com/coldbox-modules/cbfeeds" },
+	"shortDescription"	: "A nice way to consume and produce RSS,ATOM feeds the ColdBox way!",
+	"license"			: [ 
+		{ "type" : "Apache2", "url" : "http://www.apache.org/licenses/LICENSE-2.0.html" } 
+	],
+	"contributors"		: [
+		"Brad Wood <bdw429s@gmail.com>", "Curt Gratz <gratz@computerknowhow.com>"
+	],
+	"ignore":[
+        "**/.*",
+        "tests",
+        "*/.md"
+    ],
+    "scripts":{
+        "toMaster":"recipe build/toMaster.boxr"
     }
 }

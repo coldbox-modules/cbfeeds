@@ -1,26 +1,30 @@
-[![Build Status](https://travis-ci.org/coldbox-modules/cbox-feeds.svg?branch=development)](https://travis-ci.org/coldbox-modules/cbox-feeds)
+[![Build Status](https://travis-ci.org/coldbox-modules/cbfeeds.svg?branch=development)](https://travis-ci.org/coldbox-modules/cbfeeds)
 
-#WELCOME TO THE CBFEEDS MODULE
+# WELCOME TO THE CBFEEDS MODULE
 
-A nice and fancy way to consume and produce RSS, ATOM feeds the ColdBox way!
+A nice and functional way to consume and produce RSS, ATOM feeds the ColdBox way!
 
-##DOCUMENTATION
-https://github.com/coldbox-modules/cbox-feeds/wiki
+## DOCUMENTATION
 
-##LICENSE
+https://github.com/coldbox-modules/cbfeeds/wiki
+
+## LICENSE
+
 Apache License, Version 2.0.
 
-##IMPORTANT LINKS
-- https://github.com/ColdBox/cbox-feeds
+## IMPORTANT LINKS
+
+- https://github.com/coldbox-modules/cbfeeds
 - https://www.forgebox.io/view/cbfeeds
 
-##SYSTEM REQUIREMENTS
-- Lucee 4.5+
-- ColdFusion 10+
+## SYSTEM REQUIREMENTS
 
-#INSTRUCTIONS
+- Lucee 5+
+- ColdFusion 11+
 
-Just drop into your **modules** folder or use the box-cli to install
+## INSTRUCTIONS
+
+Just drop into your **modules** folder or use CommandBox to install
 
 `box install cbfeeds`
 
@@ -31,7 +35,8 @@ The module registers the following mappings in WireBox:
 
 Then you can use each of the model objects to read or generate feeds to your heart's content.
 
-##Settings
+## Settings
+
 The module can be configured via settings in your `ColdBox.cfc` in a structure called `feeds`:
 
 ```js
@@ -51,20 +56,23 @@ feeds = {
 };
 ```
 
-##Samples + Documentation
+## Samples + Documentation
+
 If you want examples just look at the shell sample app in the repository:
-https://github.com/coldbox-modules/cbox-feeds
+https://github.com/coldbox-modules/cbfeeds
 
 Or the online documentation for the module:
 
-* https://github.com/coldbox-modules/cbox-feeds/wiki
+* https://github.com/coldbox-modules/cbfeeds/wiki
 
 
 ********************************************************************************
 Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
 ww.ortussolutions.com
 ********************************************************************************
-####HONOR GOES TO GOD ABOVE ALL
+
+#### HONOR GOES TO GOD ABOVE ALL
+
 Because of His grace, this project exists. If you don't like this, then don't read it, its not for you.
 
 >"Therefore being justified by faith, we have peace with God through our Lord Jesus Christ:
@@ -74,5 +82,6 @@ And patience, experience; and experience, hope:
 And hope maketh not ashamed; because the love of God is shed abroad in our hearts by the 
 Holy Ghost which is given unto us. ." Romans 5:5
 
-###THE DAILY BREAD
- > "I am the way, and the truth, and the life; no one comes to the Father, but by me (JESUS)" Jn 14:1-12
+### THE DAILY BREAD
+
+> "I am the way, and the truth, and the life; no one comes to the Father, but by me (JESUS)" Jn 14:1-12
