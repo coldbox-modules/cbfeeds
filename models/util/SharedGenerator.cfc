@@ -23,7 +23,7 @@ License		: 	Apache 2 License
 			return this;
 		</cfscript>
 	</cffunction>
-	
+
 	<cffunction name="createInstances" access="public" returntype="struct" output="false" hint="Variables used for the validation and creation of feed data">
 		<cfargument name="instance" required="true" type="struct" hint="">
 		<cfscript>
@@ -61,7 +61,7 @@ License		: 	Apache 2 License
 			for(key in map){
 				if( structKeyExists(cmap,key) ){
 					map[key] = cmap[key];
-				}	
+				}
 			}
 
 			return map;
@@ -143,7 +143,7 @@ License		: 	Apache 2 License
 
 			/* Return with GMT */
 			return "#GMTDt# #GMTTm# GMT";
-		</cfscript>	
+		</cfscript>
 	</cffunction>
 
 <!------------------------------------------- ELEMENT FORMATTING ------------------------------------->
@@ -161,9 +161,9 @@ License		: 	Apache 2 License
 				// Replace nasty &nbsp; references
 				fmtStr = replaceNoCase( fmtStr, "&nbsp;", "", "all" );
 
-				return ESAPIEncode('xml', fmtStr);
+				return encodeForXML( fmtStr );
 			}
-			
+
 			return ( fmtStr );
 		</cfscript>
 	</cffunction>
@@ -343,7 +343,7 @@ License		: 	Apache 2 License
 	</cffunction>
 
 <!------------------------------------------- FEED EXTENSIONS ---------------------------------------->
-	
+
 	<!--- Extensions Mapping --->
 	<cffunction name="generateExtensionPropertyMap" output="false" access="public" returntype="struct" hint="Generates the extensions default property map">
 		<cfscript>
@@ -369,7 +369,7 @@ License		: 	Apache 2 License
 			return map;
 		</cfscript>
 	</cffunction>
-	
+
 	<!--- Extensions Namespaces --->
 	<cffunction name="generateExtensionNameSpace" output="false" access="private" returntype="string" hint="Generates the XML namespaces for feed extensions depending on the tags in use">
 		<cfargument name="keys" type="string" required="true" hint="A list of distinct column and structures keys"/>
@@ -398,7 +398,7 @@ License		: 	Apache 2 License
 			return nameSpace;
 		</cfscript>
 	</cffunction>
-	
+
 	<!--- Apple iTunes --->
 	<!--- Generate Channel --->
 	<cffunction name="itunesGenChannel" output="false" access="public" returntype="string" hint="Generate Apple iTunes extension channel XML">
@@ -421,7 +421,7 @@ License		: 	Apache 2 License
 						<itunes:category text="#RSSFormat(container)#"/>
 					<cfelseif listFindNoCase(structKeyList(instance.itunesCategory),container) and len(fs.itunes.category[container])>
 						<cfloop from="1" to="#listLen(fs.itunes.category[container])#" index="j">
-							<cfif listFindNoCase(instance.itunesCategory[container],listGetAt(fs.itunes.category[container],j))> 
+							<cfif listFindNoCase(instance.itunesCategory[container],listGetAt(fs.itunes.category[container],j))>
 								<itunes:category text="#RSSFormat(container)#">
 								<itunes:category text="#RSSFormat(listGetAt(fs.itunes.category[container],j))#"/>
 								</itunes:category>
@@ -430,7 +430,7 @@ License		: 	Apache 2 License
 					</cfif>
 				</cfloop>
 			</cfif>
-			<!--- Optional iTunes image --->   
+			<!--- Optional iTunes image --->
 			<cfif structKeyExists(fs.itunes,"image")><itunes:image href="#URLFormat(fs.itunes['image'])#"/></cfif>
 			<!--- Optional iTunes explicit --->
 			<cfif structKeyExists(fs.itunes,"explicit")><itunes:explicit>#RSSFormat(fs.itunes["explicit"])#</itunes:explicit></cfif>
@@ -524,7 +524,7 @@ License		: 	Apache 2 License
 			return invalidList;
 		</cfscript>
 	</cffunction>
-	<!--- Generate Item --->	
+	<!--- Generate Item --->
 	<cffunction name="itunesGenItem" output="false" access="public" returntype="string" hint="Generate Apple iTunes extension item XML">
 		<cfargument name="items" type="query" required="true" hint="The feed items"/>
 		<cfargument name="map" type="struct" required="true" hint="The column mapper to map items to queries"/>
@@ -683,7 +683,7 @@ License		: 	Apache 2 License
 		</cfloop>
 		</cfsavecontent>
 		<cfreturn returnedXML>
-	</cffunction>	
+	</cffunction>
 
 	<!--- OpenSearch 1.1 --->
 	<!--- Generate Channel --->
@@ -728,7 +728,7 @@ License		: 	Apache 2 License
 		<cfscript>
 			var invalidList = "";
 			var i 		    = 1;
-			
+
 			/* opensearch autodiscovery */
 			if( structKeyExists(fs.opensearch,"autodiscovery") and not validateURL(fs.opensearch.autodiscovery) ) {
 				invalidList = invalidList & "| The OpenSearch search-link element (autodiscovery) '#fs.opensearch.autodiscovery#' : Is not a valid URL (See <a href='#instance.SpecOS#Autodiscovery_in_RSS.2FAtom'>#instance.SpecOS#Autodiscovery_in_RSS.2FAtom</a>)";

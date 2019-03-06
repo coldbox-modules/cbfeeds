@@ -9,6 +9,7 @@
 * Fixes a bug that causes (German) umlauts to be improperly escaped
 * Fixed issue with incorrect published and updated dates when consuming an Atom feed.
 * Location protocol update
+* ACF Incompatiblities on shared generator
 
 ## 1.1.0
 
