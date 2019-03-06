@@ -8,7 +8,7 @@
 * ACF 2018 Support
 * Fixes a bug that causes (German) umlauts to be improperly escaped
 * Fixed issue with incorrect published and updated dates when consuming an Atom feed.
-
+* Location protocol update
 
 ## 1.1.0
 

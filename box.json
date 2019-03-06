@@ -1,7 +1,7 @@
 {
 	"name" 		: "CBFeeds",
 	"version"   : "1.2.0",
-    "location"  : "http://downloads.ortussolutions.com/ortussolutions/coldbox-modules/cbfeeds/@build.version@/cbfeeds-@build.version@.zip",
+    "location"  : "https://downloads.ortussolutions.com/ortussolutions/coldbox-modules/cbfeeds/@build.version@/cbfeeds-@build.version@.zip",
 	"author" 	: "Ortus Solutions <info@ortussolutions.com",
 	"slug"		: "cbfeeds",
 	"type"		: "modules",
