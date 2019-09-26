@@ -35,10 +35,11 @@ Description :
 			var path = "";
 			var y = 1;
 			if( structKeyExists(item,"media:group") and structKeyExists(item["media:group"],"media:credit") ) path = item["media:group"]["media:credit"];
-			else if (structKeyExists(item,"media:credit") ) path = item["media:credit"];
+			else if ( structKeyExists(item,"media:content") and structKeyExists(item["media:content"],"media:credit") ) path = item["media:content"]["media:credit"];
+			else if ( structKeyExists(item,"media:credit") ) path = item["media:credit"];
 			if( not IsSimpleValue(path) and arrayLen(path) ){
 				for(y=1; y lte arrayLen(path);y=y+1){
-					if( isStruct(path[y]) and structKeyExists(path[y],'role') and path[y].role is "author" ) return path[y].xmlText;
+					if( isStruct(path[y]) and structKeyExists(path[y].xmlAttributes,'role') and path[y].xmlAttributes.role is "author" ) return path[y].xmlText;
 					else if( not isStruct(path[y]) and not structKeyExists(path[y],'role') ) return path[y].xmlText;
 				}
 			}
@@ -185,25 +186,27 @@ Description :
 			else if (structKeyExists(item,"media:content") ) path = item["media:content"];
 			if( not IsSimpleValue(path) and arrayLen(path) ){
 				for(y=1; y lte arrayLen(path);y=y+1){
-					itemStruct = StructNew();
-					itemStruct.type = "media";
-					if( structKeyExists(path[y].xmlAttributes,'url') ) itemStruct.url = path[y].xmlAttributes.url;
-					else itemStruct.url = "";
-					if( structKeyExists(path[y].xmlAttributes,'filesize') ) itemStruct.size = path[y].xmlAttributes.filesize;
-					else itemStruct.size = "";
-					if( structKeyExists(path[y].xmlAttributes,'type') ) itemStruct.mimetype = path[y].xmlAttributes.type;
-					else itemStruct.type = "";
-					if( structKeyExists(path[y].xmlAttributes,'medium') ) itemStruct.medium = path[y].xmlAttributes.medium;
-					else itemStruct.medium = "";
-					if( structKeyExists(path[y].xmlAttributes,'isDefault') ) itemStruct.isDefault = path[y].xmlAttributes.isDefault;
-					else itemStruct.isDefault = "";
-					if( structKeyExists(path[y].xmlAttributes,'height') ) itemStruct.height = path[y].xmlAttributes.height;
-					else itemStruct.height = "";
-					if( structKeyExists(path[y].xmlAttributes,'width') ) itemStruct.width = path[y].xmlAttributes.width;
-					else itemStruct.width = "";
-					if( structKeyExists(path[y].xmlAttributes,'duration') ) itemStruct.duration = path[y].xmlAttributes.duration;
-					else itemStruct.duration = "";
-					ArrayAppend(attachmentCol,itemStruct);
+					if ( !structIsEmpty( path[y].xmlAttributes ) ) {
+						itemStruct = StructNew();
+						itemStruct.type = "media";
+						if( structKeyExists(path[y].xmlAttributes,'url') ) itemStruct.url = path[y].xmlAttributes.url;
+						else itemStruct.url = "";
+						if( structKeyExists(path[y].xmlAttributes,'filesize') ) itemStruct.size = path[y].xmlAttributes.filesize;
+						else itemStruct.size = "";
+						if( structKeyExists(path[y].xmlAttributes,'type') ) itemStruct.mimetype = path[y].xmlAttributes.type;
+						else itemStruct.type = "";
+						if( structKeyExists(path[y].xmlAttributes,'medium') ) itemStruct.medium = path[y].xmlAttributes.medium;
+						else itemStruct.medium = "";
+						if( structKeyExists(path[y].xmlAttributes,'isDefault') ) itemStruct.isDefault = path[y].xmlAttributes.isDefault;
+						else itemStruct.isDefault = "";
+						if( structKeyExists(path[y].xmlAttributes,'height') ) itemStruct.height = path[y].xmlAttributes.height;
+						else itemStruct.height = "";
+						if( structKeyExists(path[y].xmlAttributes,'width') ) itemStruct.width = path[y].xmlAttributes.width;
+						else itemStruct.width = "";
+						if( structKeyExists(path[y].xmlAttributes,'duration') ) itemStruct.duration = path[y].xmlAttributes.duration;
+						else itemStruct.duration = "";
+						ArrayAppend(attachmentCol,itemStruct);
+					}
 				}
 			}
 			return attachmentCol;
@@ -273,10 +276,10 @@ Description :
 			var path = "";
 			var y = 1;
 			if( structKeyExists(item,"media:group") and structKeyExists(item["media:group"],"media:thumbnail") ) path = item["media:group"]["media:thumbnail"];
-			else if (structKeyExists(item,"media:thumbnail") ) path = item["media:thumbnail"];
+			else if ( structKeyExists(item,"media:content") and structKeyExists(item["media:content"],"media:thumbnail") ) path = item["media:content"]["media:thumbnail"];
+			else if ( structKeyExists(item,"media:thumbnail") ) path = item["media:thumbnail"];
 			if( not IsSimpleValue(path) and arrayLen(path) ) {
 				for(y=1; y lte arrayLen(path);y=y+1){
-					writeoutput(y);
 					itemStruct = StructNew();
 					if ( StructKeyExists(path[y].xmlAttributes,'height') ) itemStruct.height = path[y].xmlAttributes.height;
 					if ( StructKeyExists(path[y].xmlAttributes,'width') ) itemStruct.width = path[y].xmlAttributes.width;
