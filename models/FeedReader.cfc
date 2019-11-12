@@ -654,7 +654,6 @@ Quick and Dirty Feed Dump:
 							// RSS self identifier
 							if(
 								 loop.xmlAttributes.rel is "self"
-								 and loop.xmlAttributes.type is "application/rss+xml"
 								 and StructKeyExists(loop.xmlAttributes,'href')
 								 ) {
 									feed.specs.url = loop.xmlAttributes.href;

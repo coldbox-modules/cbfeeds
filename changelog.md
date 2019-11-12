@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.3.0
+
+* Made `type` not mandatory for `atom:link` elements
+* Media elements can also be placed under `media:content` elements as well as `media:group` elements according to the specs. http://www.rssboard.org/media-rss#media-content
+
 ## 1.2.0
 
 * New module layout
