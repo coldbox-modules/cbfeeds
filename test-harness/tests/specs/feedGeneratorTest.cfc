@@ -1,61 +1,51 @@
-﻿<!-----------------------------------------------------------------------
-********************************************************************************
-Copyright 2005-2007 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
-www.coldbox.org | www.luismajano.com | www.ortussolutions.com
-********************************************************************************
+﻿component extends="coldbox.system.testing.BaseTestCase" appMapping="/root" {
 
-Author      :	Sana Ullah
-Date        :	June 01 2008
-Description :
-	FeedGeneratorTest plugin test
------------------------------------------------------------------------>
-<cfcomponent name="FeedGeneratorTest" extends="coldbox.system.testing.BaseTestCase" appMapping="/root">
-
-	<cffunction name="setUp" returntype="void" access="public" output="false">
-		<cfscript>
-		//Call the super setup method to setup the app.
+	public void function setUp() output=false{
+		// Call the super setup method to setup the app.
 		super.setup();
-		</cfscript>
+		variables.q1 = queryNew( "title,description,author,link" );
+		for ( i = 1; i <= 10; i++ ) {
+			queryAddRow( q1, 1 );
+			querySetCell( q1, "title", "Title#i#" );
+			querySetCell(
+				q1,
+				"description",
+				"description-q1-#chr( 65 + i )#"
+			);
+			querySetCell(
+				q1,
+				"author",
+				"lmajano@ortussolutions.com (Luis Majano)"
+			);
+			querySetCell( q1, "link", "http://www.coldbox.org" );
+		}
 
-		<cfset variables.q1 = queryNew('title,description,author,link')>
-		<cfloop from="1" to="10" index="i">
-			<cfset queryAddRow(q1,1) />
-			<cfset querySetCell(q1, 'title', 'Title#i#')>
-			<cfset querySetCell(q1, 'description', 'description-q1-#chr(65 + i)#')>
-			<cfset querySetCell(q1, 'author', 'lmajano@ortussolutions.com (Luis Majano)')>
-			<cfset querySetCell(q1, 'link', 'http://www.coldbox.org')>
-		</cfloop>
+		variables.feedStruct[ "title" ]          = "feed title";
+		variables.feedStruct[ "link" ]           = "http://www.coldbox.org";
+		variables.feedStruct[ "description" ]    = "feed generator unit test";
+		variables.feedStruct[ "generator" ]      = "ColdBox";
+		variables.feedStruct[ "managingEditor" ] = "lmajano@ortussolutions.com (Luis Majano)";
+		variables.feedStruct[ "webmaster" ]      = "lmajano@ortussolutions.com (Luis Majano)";
 
-		<cfscript>
-			variables.feedStruct['title'] = 'feed title';
-			variables.feedStruct['link'] = 'http://www.coldbox.org';
-			variables.feedStruct['description'] = 'feed generator unit test';
-			variables.feedStruct['generator'] = 'ColdBox';
-			variables.feedStruct['managingEditor'] = 'lmajano@ortussolutions.com (Luis Majano)';
-			variables.feedStruct['webmaster'] = 'lmajano@ortussolutions.com (Luis Majano)';
+		variables.feedStruct[ "items" ] = variables.q1;
+	}
 
-			variables.feedStruct['items'] = variables.q1;
-		</cfscript>
-	</cffunction>
+	public void function testPlugin() output=false{
+		//  Now test some events
 
-	<cffunction name="testPlugin" access="public" returntype="void" output="false">
-		<!--- Now test some events --->
-		<cfscript>
-			var plugin = getWireBox().getInstance( "feedGenerator@cbfeeds" );
+		var plugin = getWireBox().getInstance( "feedGenerator@cbfeeds" );
 
-			AssertTrue( isObject(plugin) );
-		</cfscript>
-	</cffunction>
+		assertTrue( isObject( plugin ) );
+	}
 
-	<cffunction name="testCreateFeed" access="public" returntype="void" output="false">
-		<!--- Now test some events --->
-		<cfscript>
-			var plugin = getWireBox().getInstance( "feedGenerator@cbfeeds" );
-			var direactoryPath = ExpandPath('/tests/tmp/') & 'testrss.xml';
-			var xmlDoc = plugin.createFeed(feedStruct = variables.feedStruct, OutputFile = direactoryPath);
+	public void function testCreateFeed() output=false{
+		//  Now test some events
 
-			assertTrue(isXML(xmlDoc), "Returned value is not valid xml");
-		</cfscript>
-	</cffunction>
+		var plugin = getWireBox().getInstance( "feedGenerator@cbfeeds" );
+		var path   = expandPath( "/tests/tmp/" ) & "testrss.xml";
+		var xmlDoc = plugin.createFeed( feedStruct = variables.feedStruct, OutputFile = path );
 
-</cfcomponent>
+		assertTrue( isXML( xmlDoc ), "Returned value is not valid xml" );
+	}
+
+}

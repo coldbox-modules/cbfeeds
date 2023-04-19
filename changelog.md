@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - GitHub Actions CI
 - ColdBox 7 Testing
+- Some conversion to script
+- Ability for this to work due to dumb ACF compiler bug on xml transform including xss paths
+
+### Removed
+
+- ACF11, ACF2016 Support
 
 ## 1.3.0
 
