@@ -9,16 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2023-04-20
+
 ### Added
 
--   GitHub Actions CI
--   ColdBox 7 Testing
--   Some conversion to script
--   Ability for this to work due to dumb ACF compiler bug on xml transform including xss paths
+- GitHub Actions CI
+- ColdBox 7 Testing
+- Some conversion to script
+- Ability for this to work due to dumb ACF compiler bug on xml transform including xss paths
 
 ### Removed
 
--   ACF11, ACF2016 Support
+- ACF11, ACF2016 Support
 
 ## 1.3.0
 
@@ -51,6 +53,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Create first module version
 
-[Unreleased]: https://github.com/coldbox-modules/cbfeeds/compare/v...HEAD
+[Unreleased]: https://github.com/coldbox-modules/cbfeeds/compare/v2.0.0...HEAD
 
-[]: https://github.com/coldbox-modules/cbfeeds/compare/ae28d3eb3faba4b25b6ad75f2d6365f768a670f1...v
+[2.0.0]: https://github.com/coldbox-modules/cbfeeds/compare/658e8283163eb004053fd36c002d81b3490df126...v2.0.0
+
+\[]: <https://github.com/coldbox-modules/cbfeeds/compare/ae28d3eb3faba4b25b6ad75f2d6365f768a670f1...v>
