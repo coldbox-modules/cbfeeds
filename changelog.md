@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2023-04-20
+
 ### Added
 
 - GitHub Actions CI
@@ -51,6 +53,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Create first module version
 
-[Unreleased]: https://github.com/coldbox-modules/cbfeeds/compare/v...HEAD
+[Unreleased]: https://github.com/coldbox-modules/cbfeeds/compare/v2.0.0...HEAD
 
-[]: https://github.com/coldbox-modules/cbfeeds/compare/ae28d3eb3faba4b25b6ad75f2d6365f768a670f1...v
+[2.0.0]: https://github.com/coldbox-modules/cbfeeds/compare/658e8283163eb004053fd36c002d81b3490df126...v2.0.0
+
+\[]: <https://github.com/coldbox-modules/cbfeeds/compare/ae28d3eb3faba4b25b6ad75f2d6365f768a670f1...v>
