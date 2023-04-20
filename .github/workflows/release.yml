@@ -36,11 +36,6 @@ jobs:
         with:
           forgeboxAPIKey: ${{ secrets.FORGEBOX_TOKEN }}
 
-      - name: Run markdownlint
-        run: |
-          npm install -g markdownlint-cli
-          markdownlint changelog.md --fix
-
       - name: "Setup Environment Variables For Build Process"
         id: current_version
         run: |
