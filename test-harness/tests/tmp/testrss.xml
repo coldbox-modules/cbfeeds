@@ -1,72 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
-   <channel>
-      <description>feed generator unit test</description>
-      <link>http://www.coldbox.org</link>
-      <title>feed title</title>
-      <docs>http://www.rssboard.org/rss-specification</docs>
-      <generator>FeedGenerator</generator>
-      <managingEditor>lmajano@ortussolutions.com (Luis Majano)</managingEditor>
-      <webMaster>lmajano@ortussolutions.com (Luis Majano)</webMaster>
-      <item>
-         <title>Title1</title>
-         <description>description-q1-B</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-      <item>
-         <title>Title2</title>
-         <description>description-q1-C</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-      <item>
-         <title>Title3</title>
-         <description>description-q1-D</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-      <item>
-         <title>Title4</title>
-         <description>description-q1-E</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-      <item>
-         <title>Title5</title>
-         <description>description-q1-F</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-      <item>
-         <title>Title6</title>
-         <description>description-q1-G</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-      <item>
-         <title>Title7</title>
-         <description>description-q1-H</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-      <item>
-         <title>Title8</title>
-         <description>description-q1-I</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-      <item>
-         <title>Title9</title>
-         <description>description-q1-J</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-      <item>
-         <title>Title10</title>
-         <description>description-q1-K</description>
-         <link>http://www.coldbox.org</link>
-         <author>lmajano@ortussolutions.com (Luis Majano)</author>
-      </item>
-   </channel>
-</rss>
+		<channel>
+		
+		
+		
+		<description>feed generator unit test</description>
+		<link>http://www.coldbox.org</link>
+		<title>feed title</title>
+		
+		
+		
+		<docs>http://www.rssboard.org/rss-specification</docs>
+		<generator>FeedGenerator</generator>
+		
+		<managingEditor>lmajano@ortussolutions.com (Luis Majano)</managingEditor> <webMaster>lmajano@ortussolutions.com (Luis Majano)</webMaster> 
+		<item>
+		
+		
+			<title>Title1</title>
+		
+			<description>description-q1-B</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		<item>
+		
+		
+			<title>Title2</title>
+		
+			<description>description-q1-C</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		<item>
+		
+		
+			<title>Title3</title>
+		
+			<description>description-q1-D</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		<item>
+		
+		
+			<title>Title4</title>
+		
+			<description>description-q1-E</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		<item>
+		
+		
+			<title>Title5</title>
+		
+			<description>description-q1-F</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		<item>
+		
+		
+			<title>Title6</title>
+		
+			<description>description-q1-G</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		<item>
+		
+		
+			<title>Title7</title>
+		
+			<description>description-q1-H</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		<item>
+		
+		
+			<title>Title8</title>
+		
+			<description>description-q1-I</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		<item>
+		
+		
+			<title>Title9</title>
+		
+			<description>description-q1-J</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		<item>
+		
+		
+			<title>Title10</title>
+		
+			<description>description-q1-K</description>
+		
+			<link>http://www.coldbox.org</link>
+		
+			<author>lmajano@ortussolutions.com (Luis Majano)</author>
+		
+		</item>
+		
+		</channel>
+		</rss>
