@@ -71,10 +71,14 @@ jobs:
 
       - name: Setup CommandBox CLI
         uses: Ortus-Solutions/setup-commandbox@v2.0.1
+      
+      - name: Update Boxlang Module
+        if: ${{ matrix.cfengine == 'boxlang@1' }}
+        run:
+          box install --force commandbox-boxlang
 
       - name: Install Dependencies
         run: |
-          box install commandbox-boxlang --force
           box install
           cd test-harness
           box package set dependencies.coldbox=${{ matrix.coldboxVersion }}
