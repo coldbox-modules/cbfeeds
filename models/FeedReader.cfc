@@ -812,7 +812,7 @@ Quick and Dirty Feed Dump:
 			<cfcatch type="Expression">
 				<cfthrow type="FeedReader.FeedParsingException"
 						 message="Error parsing the feed into an XML document. Please verify that the feed is correct and valid"
-						 detail="The returned cfhttp content belonging to (#arguments.feedURL#) : <pre>#XMLFormat(feedResult.fileContent.toString())#</pre>">
+						 detail="The returned cfhttp content belonging to (#arguments.feedURL#) : <pre>#XMLFormat(feedResult.toString())#</pre>">
 			</cfcatch>
 		</cftry>
 
